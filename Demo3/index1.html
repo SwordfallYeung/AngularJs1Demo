@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+    
+    <!--    AngularJs 指令  -->
+ 
+	<!-- 
+     AngularJS 通过被称为 指令 的新属性来扩展 HTML。
+
+     AngularJS 通过内置的指令来为应用添加功能。
+
+     AngularJS 允许你自定义指令
+	 -->
+
+
+     <!-- 
+      AngularJs 指令
+      AngularJS 指令是扩展的 HTML 属性，带有前缀 ng-。
+
+      ng-app 指令初始化一个 AngularJS 应用程序。
+
+      ng-init 指令初始化应用程序数据。
+
+      ng-model 指令把元素值（比如输入域的值）绑定到应用程序。
+
+      -->
+     <div ng-app="" ng-init="firstName='John';quantity=1;price=5" >
+     	<p>在输入框中尝试输入：</p>
+        <p>姓名：<input type="text" ng-model="firstName"/></p>
+        <p>你输入的为：{{firstName}}</p>
+        <br/>
+        <br/>
+
+        <h2>价格计算器</h2>
+        <!-- 两个文本域是通过两个 ng-model 指令同步的： -->
+        数量：<input type="number" ng-model="quantity"><br/>
+        价格：<input type="number" ng-model="price">
+
+        <p><b>总价：</b>{{quantity * price}}</p>
+     </div>
+     <!-- 
+    一个网页可以包含多个运行在不同元素中的 AngularJS 应用程序。
+
+    上面实例中的 {{ firstName }} 表达式是一个 AngularJS 数据绑定表达式。
+
+    AngularJS 中的数据绑定，同步了 AngularJS 表达式与 AngularJS 数据。
+
+    {{ firstName }} 是通过 ng-model="firstName" 进行同步。
+      -->
+</body>
+</html>

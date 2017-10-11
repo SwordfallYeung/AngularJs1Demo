@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+    
+    <!--    AngularJs 表达式  -->
+ 
+	<!-- 
+     AngularJS 表达式写在双大括号内：{{ expression }}。
+
+     AngularJS 表达式把数据绑定到 HTML，这与 ng-bind 指令有异曲同工之妙。
+	 -->
+
+
+     <!-- 
+      AngularJs 数字
+      
+      使用 ng-init 不是很常见。您将在控制器一章中学习到一个更好的初始化数据的方式。
+      -->
+     <div ng-app="" ng-init="quantity=1;cost=5" >
+         数字就像JavaScript数字:
+     	<p>总价： {{quantity * cost}}</p>
+         使用 ng-bind 的相同实例：
+        <p>总价： <span ng-bind="quantity * cost"></span></p>
+     </div>
+     <script>
+     
+     </script>
+</body>
+</html>
