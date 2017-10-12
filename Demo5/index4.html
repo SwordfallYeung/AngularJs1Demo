@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<style>
+  input.ng-invalid{
+    background-color: lightblue;
+  }
+</style>
+<body>
+    
+    <!--    AngularJs Scope作用域  -->
+
+     <!-- 
+      Scope(作用域) 是应用在 HTML (视图) 和 JavaScript (控制器)之间的纽带。
+      Scope 是一个对象，有可用的方法和属性。
+      Scope 可应用在视图和控制器上。
+      -->
+
+      <!-- 
+        根作用域
+        
+       所有的应用都有一个$rootScope，它可以作用在ng-app指令包含的所有HTML元素中。
+       $rootScope可作用于整个应用中。是各个controller中scope的桥梁。用roottScope定义的值，可以在各个controller中使用。
+       -->
+     <div ng-app="myApp" ng-controller="myCtrl" >
+       <h1>{{lastname}} 家族成员：</h1>
+       <ul>
+         <li ng-repeat="x in names">{{x}} {{lastname}}</li>
+       </ul>
+     </div>
+
+     <script>
+       var app=angular.module('myApp',[]);
+
+       app.controller('myCtrl',function($scope,$rootScope){
+          $scope.names=['Emil','Tobias','Linus'];
+          $rootScope.lastname="Refsnes";
+       });
+     </script>
+</body>
+</html>

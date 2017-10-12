@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<!-- 为了让页面更加美观，我们可以在页面中使用CSS： -->
+<style>
+table, th , td {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
+table tr:nth-child(odd) {
+  background-color: #f1f1f1;
+}
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+</style>
+<body>
+    
+    <!--    AngularJs HTML DOM  -->
+
+     <!-- 
+      AngularJS 为 HTML DOM 元素的属性提供了绑定应用数据的指令。
+      -->
+
+      <!-- 
+       ng-show 指令隐藏或显示一个 HTML 元素
+  
+       -->
+
+       
+      <div ng-app="" >
+          <p ng-show="true">
+              我是可见的。
+          </p>
+          <p ng-show="false">
+            我是不可见的。
+          </p>
+      </div>
+
+      <!-- 
+        ng-show 指令根据 value 的值来显示（隐藏）HTML 元素。
+        你可以使用表达式来计算布尔值（ true 或 false）:
+       -->
+
+</body>
+</html>

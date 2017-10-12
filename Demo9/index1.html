@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<style>
+  input.ng-invalid{
+    background-color: lightblue;
+  }
+</style>
+<body>
+    
+    <!--    AngularJs Http  -->
+
+     <!-- 
+       $http 是 AngularJS 中的一个核心服务，用于读取远程服务器的数据。
+       使用格式：
+
+       // 简单的 GET 请求，可以改为 POST
+        $http({
+            method: 'GET',
+            url: '/someUrl'
+        }).then(function successCallback(response) {
+                // 请求成功执行代码
+            }, function errorCallback(response) {
+                // 请求失败执行代码
+        });
+      -->
+
+      <!-- 
+       POST 与 GET 简写方法格式：
+        $http.get('/someUrl', config).then(successCallback, errorCallback);
+
+        $http.post('/someUrl', data, config).then(successCallback, errorCallback);
+
+        此外还有以下简写方法：
+        $http.get
+        $http.head
+        $http.post
+        $http.put
+        $http.delete
+        $http.jsonp
+        $http.patch
+        更详细内容可参见：
+       -->
+
+       
+      <div ng-app="myApp" ng-controller="myCtrl">
+         
+         <p>{{names1}}</p>
+         ------------------------
+         <ul>
+             <li ng-repeat="x in names2">
+                {{x.Name+", "+x.Country}}
+             </li>
+         </ul>
+         
+      </div>
+
+      <script>
+      var app = angular.module('myApp', []);
+
+      app.controller('myCtrl', function($scope,$http) {
+            $http({
+              method:'GET',
+              url:'D:\\AngularJs\\AngularJs1Demo\\Demo8\\welcome.json'
+            }).then(function successCallback(response){
+              $scope.names1=response.data.sites;
+            },function errorCallback(response){
+               //请求失败执行代码
+            });
+
+            $http.get("D:\\AngularJs\\AngularJs1Demo\\Demo8\\welcome.json").then(function(response){
+              $scope.names2=response.data.sites;
+            });
+      });
+      </script>
+</body>
+</html>

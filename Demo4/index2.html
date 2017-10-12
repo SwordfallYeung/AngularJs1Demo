@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+    
+    <!--    AngularJs 模型  -->
+
+     <!-- 
+      验证用户输入
+      以上实例中，提示信息会在 ng-show 属性返回 true 的情况下显示。
+      -->
+     <form ng-app="" name="myForm">
+       Email: <input type="email" name="myAddress" ng-model="text">
+       <span ng-show="myForm.myAddress.$error.email">不是一个合法的邮箱地址</span>
+     </form>
+     <p>在输入框中输入你的邮箱地址，如果不是一个合法的邮箱地址，会弹出提示信息。</p>
+     <!-- 
+      非得form标签，div不行
+      -->
+</body>
+</html>

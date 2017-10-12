@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<style>
+  input.ng-invalid{
+    background-color: lightblue;
+  }
+</style>
+<body>
+    
+    <!--    AngularJs 服务（Service） -->
+
+     <!-- 
+       AngularJS 中你可以创建自己的服务，或使用内建服务。
+      -->
+
+      <!-- 
+        为什么使用服务
+        
+        在很多服务中，比如$location服务，它可以使用DOM中存在的对象，类似window.location对象，但window.location对象在AngularJs应用中有一定的局限性。
+        AngularJs会一直监控应用，处理事件变化，AngularJS使用$location服务比使用window.location对象更好。
+       -->
+
+       <!-- 
+       $http服务 
+       $http 是AngularJs应用中最常用的服务。服务向服务器发送请求，应用响应服务器传送过来的数据。
+       -->
+
+       <!-- 
+        $interval 服务
+        AngularJS $interval 服务对应了 JS window.setInterval 函数。
+        -->
+      <div ng-app="myApp" ng-controller="myCtrl">
+         
+         <p>{{ theTime }}</p>
+         
+      </div>
+
+      <script>
+      var app = angular.module('myApp', []);
+      app.controller('myCtrl', function($scope,$interval) {
+            $scope.theTime = new Date().toLocaleTimeString();
+            $interval(function () {
+                $scope.theTime = new Date().toLocaleTimeString();
+            }, 1000);
+      });
+      </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+    
+    <!--    AngularJs 模型  -->
+
+     <!-- 
+      ng-model 指令 && 双向绑定
+      ng-model 指令用于绑定应用程序数据到 HTML 控制器(input, select, textarea)的值。
+      ng-model 指令可以将输入域的值与 AngularJS 创建的变量绑定。
+      -->
+     <div ng-app="myApp" ng-controller="myCtrl">
+       名字：<input ng-model="name"><br/>
+       <p>输入值：{{name}}</p>
+     </div>
+     <script>
+       var app=angular.module("myApp",[]);
+       app.controller('myCtrl',function($scope){
+          $scope.name="John Doe";
+       });
+     </script>
+</body>
+</html>

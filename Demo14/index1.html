@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<!-- 为了让页面更加美观，我们可以在页面中使用CSS： -->
+<style>
+table, th , td {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
+table tr:nth-child(odd) {
+  background-color: #f1f1f1;
+}
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+</style>
+<body>
+    
+    <!--    AngularJs 事件  -->
+
+     <!-- 
+      AngularJS 有自己的 HTML 事件指令。
+      -->
+
+      
+      <div ng-app="myApp" ng-controller="myCtrl">
+      <!-- 
+       ng-click 指令定义了AngularJS点击事件
+  
+       -->
+          <button ng-click="count= count+1">点我！</button>
+          <p>
+            {{count}}
+          </p>
+
+          <br/>
+
+      <!-- 
+
+        隐藏 HTML 元素
+        ng-hide 指令用于设置应用部分是否可见。
+        ng-hide="true" 设置 HTML 元素不可见。
+        ng-hide="false" 设置 HTML 元素可见。
+
+       -->
+          <button ng-click="toggle1()">隐藏/显示(hide)</button>
+
+          <p ng-hide="myVar1">
+              名：<input type="text" ng-model="firstName"><br/>
+              姓：<input type="text" ng-model="lastName"><br/>
+              <br/>
+              Full Name:{{firstName+" "+lastName}}
+          </p>
+
+          <!-- 
+              
+            应用有一个默认属性: $scope.myVar = false;
+            ng-hide 指令设置 <p>元素及两个输入域是否可见， 根据 myVar 的值 (true 或 false) 来设置是否可见。
+            toggle() 函数用于切换 myVar 变量的值（true 和 false）。
+            ng-hide="true" 让元素 不可见。
+
+           -->
+
+           <br/>
+           <br/>
+          <!-- 
+              显示HTML元素
+              
+              ng-show 指令可用于设置应用中的一部分是否可见 。
+              ng-show="false" 可以设置 HTML 元素 不可见。
+              ng-show="true" 可以以设置 HTML 元素可见。
+              以下实例使用了 ng-show 指令:
+           -->
+           <button ng-click="toggle2()">隐藏/显示（show）</button>
+
+          <p ng-show="myVar2">
+              名：<input type="text" ng-model="firstName"><br/>
+              姓：<input type="text" ng-model="lastName"><br/>
+              <br/>
+              姓名: {{firstName+" "+lastName}}
+          </p>
+      </div>
+
+
+      <script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function($scope) {
+            $scope.count = 0;
+            $scope.firstName="John",
+            $scope.lastName="Doe";
+            $scope.myVar1=false;
+            $scope.myVar2=true;
+            $scope.toggle1=function(){
+              $scope.myVar1=!$scope.myVar1;
+            };
+            $scope.toggle2=function(){
+              $scope.myVar2=!$scope.myVar2;
+            };
+        });
+      </script>
+</body>
+</html>

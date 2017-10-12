@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<style>
+  input.ng-invalid{
+    background-color: lightblue;
+  }
+</style>
+<body>
+    
+    <!--    AngularJs Select 选择框  -->
+
+     <!-- 
+       AngularJS 可以使用数组或对象创建一个下拉列表选项。
+      -->
+
+      <!-- 
+       使用 ng-options 创建选择框
+
+        ng-init 设置默认选中值。
+
+       在 AngularJS 中我们可以使用 ng-option 指令来创建一个下拉列表，列表项通过对象和数组循环输出，如下实例:
+       -->
+
+       
+      <div ng-app="myApp" ng-controller="myCtrl">
+         
+
+         <!-- 使用对象作为数据源, x 为键(key), y 为值(value): -->
+         <select ng-model="selectedSite"
+           ng-options="x for (x,y) in sites">
+         </select>
+
+         <h1>你选择的值是：{{selectedSite}}</h1>
+         
+         <!-- 你选择的值为在 key-value 对中的 value。
+          value 在 key-value 对中也可以是个对象： -->
+          <select ng-model="selectedCar"
+           ng-options="x for (x,y) in cars">
+         </select>
+         <h1>你选择的是: {{selectedCar.brand}}</h1>
+          <h2>模型: {{selectedCar.model}}</h2>
+          <h3>颜色: {{selectedCar.color}}</h3>
+
+          <!-- 在下拉菜单也可以不使用 key-value 对中的 key , 直接使用对象的属性： -->
+          <select ng-model="selectedCar" ng-options="y.brand for (x, y) in cars"></select>
+          <p>你选择的是: {{selectedCar.brand}}</p>
+          <p>型号为: {{selectedCar.model}}</p>
+          <p>颜色为: {{selectedCar.color}}</p>
+      </div>
+
+      <script>
+      var app = angular.module('myApp', []);
+
+      app.controller('myCtrl', function($scope) {
+            $scope.sites = {
+                                site01 : "Google",
+                                site02 : "Runoob",
+                                site03 : "Taobao"
+                            };
+
+           $scope.cars = {
+                            car01 : {brand : "Ford", model : "Mustang", color : "red"},
+                            car02 : {brand : "Fiat", model : "500", color : "white"},
+                            car03 : {brand : "Volvo", model : "XC90", color : "black"}
+                          };
+      });
+      </script>
+</body>
+</html>

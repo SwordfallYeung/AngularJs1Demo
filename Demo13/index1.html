@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<!-- 为了让页面更加美观，我们可以在页面中使用CSS： -->
+<style>
+table, th , td {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
+table tr:nth-child(odd) {
+  background-color: #f1f1f1;
+}
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+</style>
+<body>
+    
+    <!--    AngularJs HTML DOM  -->
+
+     <!-- 
+      AngularJS 为 HTML DOM 元素的属性提供了绑定应用数据的指令。
+      -->
+
+      <!-- 
+       ng-disabled 指令直接绑定应用程序数据到 HTML 的 disabled 属性。
+  
+       -->
+
+       
+      <div ng-app="" ng-init="mySwitch=true">
+          <p>
+            <button ng-disabled="mySwitch">点我！</button>
+          </p>
+
+          <p><input type="checkbox" ng-model="mySwitch">按钮</p>
+
+          <p>{{mySwitch}}</p>
+      </div>
+
+</body>
+</html>

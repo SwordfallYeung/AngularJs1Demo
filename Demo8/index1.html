@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<style>
+  input.ng-invalid{
+    background-color: lightblue;
+  }
+</style>
+<body>
+    
+    <!--    AngularJs 服务（Service） -->
+
+     <!-- 
+       AngularJS 中你可以创建自己的服务，或使用内建服务。
+      -->
+
+      <!-- 
+        什么是服务
+        
+        在 AngularJS 中，服务是一个函数或对象，可在你的 AngularJS 应用中使用。
+        AngularJS 内建了30 多个服务。
+        有个 $location 服务，它可以返回当前页面的 URL 地址。
+        
+        注意 $location 服务是作为一个参数传递到 controller 中。如果要使用它，需要在 controller 中定义
+       -->
+      <div ng-app="myApp" ng-controller="customersCtrl">
+         
+         <p>{{ myUrl }}</p>
+         
+      </div>
+
+      <script>
+      var app = angular.module('myApp', []);
+      app.controller('customersCtrl', function($scope,$location) {
+          $scope.myUrl=$location.absUrl();
+      });
+      </script>
+</body>
+</html>

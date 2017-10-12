@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<style>
+  input.ng-invalid{
+    background-color: lightblue;
+  }
+</style>
+<body>
+    
+    <!--    AngularJs 服务（Service） -->
+
+     <!-- 
+       AngularJS 中你可以创建自己的服务，或使用内建服务。
+      -->
+
+      <!-- 
+       创建自定义服务
+       你可以创建访问自定义服务，链接到你的模块中：
+       -->
+
+       
+      <div ng-app="myApp" ng-controller="myCtrl">
+         
+         <p>255的16进制是：</p>
+         <h1>{{hex}}</h1>
+      </div>
+
+      <p>自定义服务，用于转换16进制数</p>
+
+      <script>
+      var app = angular.module('myApp', []);
+      app.service('hexafy',function(){
+          this.myFunc=function(x){
+            return x.toString(16);
+          }
+      });
+      app.controller('myCtrl', function($scope,hexafy) {
+            $scope.hex = hexafy.myFunc(255);
+      });
+      </script>
+</body>
+</html>

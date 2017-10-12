@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<style>
+  input.ng-invalid{
+    background-color: lightblue;
+  }
+</style>
+<body>
+    
+    <!--    AngularJs 服务（Service） -->
+
+     <!-- 
+       AngularJS 中你可以创建自己的服务，或使用内建服务。
+      -->
+
+      <!-- 
+       过滤器中，使用自定义服务
+       当你创建了自定义服务，并连接到你的应用上后，你可以在控制器，指令，过滤器或其他服务中使用它。
+       -->
+
+       
+      <div ng-app="myApp" ng-controller="myCtrl">
+         
+         <p>255的16进制是：</p>
+         <h1>{{255 | myFormat}}</h1>
+      </div>
+
+      <p>自定义服务，用于转换16进制数</p>
+
+      <!-- 在对象数组中获取值时你可以使用过滤器： -->
+ 
+      <script>
+      var app = angular.module('myApp', []);
+      app.service('hexafy',function(){
+          this.myFunc=function(x){
+            return x.toString(16);
+          }
+      });
+
+      // 在过滤器 myFormat 中使用服务 hexafy:
+      app.filter('myFormat',['hexafy',function(hexafy){
+         return function(x){
+              return hexafy.myFunc(x);
+         };
+      }]);
+
+      app.controller('myCtrl', function($scope,hexafy) {
+            $scope.hex = hexafy.myFunc(255);
+      });
+      </script>
+</body>
+</html>
