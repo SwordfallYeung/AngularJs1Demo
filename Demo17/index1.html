@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+    
+    <!--    AngularJs 表单  -->
+
+     <!-- 
+      AngularJS 表单是输入控件的集合。
+
+      以下 HTML input 元素被称为 HTML 控件:
+
+        input 元素
+        select 元素
+        button 元素
+        textarea 元素
+      -->
+      
+      <div ng-app="">
+    
+         <!-- 
+        数据绑定
+
+        Input 控件使用 ng-model 指令来实现数据绑定。
+        
+       -->
+        <form>
+          First Name:<input type="text" ng-model="firstname">
+        </form>
+
+        <h1>You entered: {{firstname}}</h1>
+
+
+        <br/>
+        <br/>
+
+        <!-- 
+        Checkbox(复选框)
+        checkbox 的值为 true 或 false，可以使用 ng-model 指令绑定，它的值可以用于应用中：
+       -->
+        <form>
+          <input type="checkbox" ng-model="myVar">复选框
+        </form>
+        <h1 ng-show="myVar">My Header</h1>
+
+        <br/>
+        <br/>
+
+        <!-- 
+         单选框
+        单选框使用同一个 ng-model ，可以有不同的值，但只有被选中的单选按钮的值会被使用。
+       -->
+       <form>
+         选择一个选项:<br/>
+         <input type="radio" ng-model="myVar2" value="dogs">Dogs<br/>
+         <input type="radio" ng-model="myVar2" value="tuts">Tutorials<br/>
+         <input type="radio" ng-model="myVar2" value="cars">Cars<br/>
+       </form>
+
+       <div ng-switch="myVar2">
+         <div ng-switch-when="dogs">
+           <h1>Dogs</h1>
+           <p>Welcome to a world of dogs.</p>
+         </div>
+         <div ng-switch-when="tuts">
+           <h1>Tutorials</h1>
+           <p>Learn from examples.</p>
+         </div>
+         <div ng-switch-when="cars">
+           <h1>Cars</h1>
+           <p>Read about cars.</p>
+         </div>
+       </div>
+      </div>
+
+      <br/>
+      <br/>
+
+      <!-- 
+        novalidate 属性是在 HTML5 中新增的。禁用了使用浏览器的默认验证。
+      
+      novalidate 属性在应用中不是必须的，但是你需要在 AngularJS 表单中使用，用于重写标准的 HTML5 验证。 -->
+      <form novalidate>
+        选择一个选项:
+        <select ng-model="myVar3">
+          <option value=""></option>
+          <option value="dogs">Dogs</option>
+          <option value="tuts">Tutorials</option>
+          <option value="cars">Cars</option>
+        </select>
+      </form>
+
+
+      <script>
+       
+      </script>
+</body>
+</html>
