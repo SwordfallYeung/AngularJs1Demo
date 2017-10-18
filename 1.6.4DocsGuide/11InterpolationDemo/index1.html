@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script src="https://code.angularjs.org/1.6.4/angular.min.js"></script>
+</head>
+<body>
+    
+    <!-- 
+    Developer Guide  
+    Interpolation
+    -->
+
+    <!-- 
+    Binding to boolean attributes
+
+    Attributes such as disabled are called boolean attributes,we cannot use normal attribute bindings with them, because the HTML specification does not require browsers to preserve the values of boolean attributes. 
+
+    In the following example, the interpolation information would be ignored and the browser would simply interpret the attribute as present, meaning that the button would always be disabled.
+
+    For this reason, Angular provides special ng-prefixed directives for the following boolean attributes: disabled, required, selected, checked, readOnly , and open.
+
+    These directives take an expression inside the attribute, and set the corresponding boolean attribute to true when the expression evaluates to truthy.
+    -->
+    
+	<div ng-app="myApp" ng-controller="testController">
+		<p>Disabled：<input type="checkbox" ng-model="isDisabled1"/></p>
+		<button disabled="{{isDisabled1}}">Disabled</button>
+		<br/>
+		<br/>
+		<!-- 不起作用 -->
+		<p>Disabled：<input type="checkbox" ng-model="isDisabled"/></p>
+		<button ng-disabled="{{isDisabled}}" ng-click="testClick()">Disabled</button>
+	</div>
+
+	<script>
+		var myApp=angular.module("myApp",[]);
+		myApp.controller("testController",function($scope,$window){
+			$scope.testClick=function(){
+				$window.alert("hello");
+			}
+		})
+	</script>
+</body>
+</html>

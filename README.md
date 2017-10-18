@@ -10,3 +10,9 @@ factory,service,provider三种创建服务的方法:  http://blog.csdn.net/zcl_l
 <br/>
 angular中$emit(向上扩散)与$broadcast(向下扩散)详解 <br/>
 http://blog.csdn.net/jl244981288/article/details/51520983<br/>
+<br/>
+AngularJs所有版本：<br/>
+http://blog.csdn.net/Rongbo_J/article/details/51325606<br/>
+<br/>
+constant与value的区别：<br/>
+http://www.cnblogs.com/lyy-2016/p/5691499.html<br/>

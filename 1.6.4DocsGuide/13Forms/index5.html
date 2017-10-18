@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script src="https://code.angularjs.org/1.6.4/angular.min.js"></script>
+</head>
+<body>
+    
+    <!-- 
+    Developer Guide  
+    Forms
+    -->
+
+    <!-- 
+    Custom Validation
+
+    Angular provides basic implementation for most common HTML5 input types: (text, number, url, email, date, radio, checkbox), as well as some directives for validation (required, pattern, minlength, maxlength, min, max).
+
+    In the following example we create two directives:
+    An integer directive that validates whether the input is a valid integer. 
+    A username directive that asynchronously checks if a user-entered value is already taken. We mock the server request with a $q deferred.
+    -->
+    
+	<div ng-app="formExample" ng-controller="ExampleController">
+		<form name="form" class="css-form" novalidate>
+		  <div>
+			<label>Size (integer 0 - 10): 
+			   <input type="number" name="size" ng-model="size" min="0" max="10" integer/>{{size}}
+			</label><br/>
+			<span ng-show="form.size.$error.integer">The value is not  a valid integer!</span>
+			<span ng-show="form.size.$error.min || form.size.$error.max">
+				The value must be in range 0 to 10!
+			</span>
+		  </div>
+
+		  <div>
+		  	
+		  </div>
+		</form>
+		
+
+	</div>
+
+	<script>
+		var myApp=angular.module("formExample",[]);
+		
+		myApp.controller('ExampleController',['$scope', function($scope){
+			$scope.user = {};
+		}]);
+
+	</script>
+</body>
+</html>r

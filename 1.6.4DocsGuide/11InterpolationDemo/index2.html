@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script src="https://code.angularjs.org/1.6.4/angular.min.js"></script>
+</head>
+<body>
+    
+    <!-- 
+    Developer Guide  
+    Interpolation
+    -->
+
+    <!-- 
+    ngAttr for binding to arbitrary attributes
+
+    Web browsers are sometimes picky about what values they consider valid for attributes.
+
+    We would expect Angular to be able to bind to this, but when we check the console we see something like Error: Invalid value for attribute cx="{{cx}}". Because of the SVG DOM API's restrictions, you cannot simply write cx="{{cx}}".
+
+    With ng-attr-cx you can work around this problem.
+    -->
+    
+	<div ng-app="myApp" ng-controller="myCtr">
+		<svg>
+			<circle cx="{{cx}}"></circle>
+		</svg>
+		<br/>
+		<svg>
+			<circle ng-attr-cx="{{cx}}"></circle>
+		</svg>
+
+	</div>
+
+	<script>
+		var myApp=angular.module("myApp",[]);
+		myApp.controller("testController",function($scope,$window){
+			$scope.testClick=function(){
+				$window.alert("hello");
+			}
+		})
+	</script>
+</body>
+</html>

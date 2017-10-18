@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script src="https://code.angularjs.org/1.6.4/angular.min.js"></script>
+</head>
+<body>
+    
+    <!-- 
+    Developer Guide  
+    Forms
+    -->
+
+    <!-- 
+    Using CSS classes
+
+    To allow styling of form as well as controls, ngModel adds these CSS classes:
+    ng-valid: the model is valid
+	ng-invalid: the model is invalid
+	ng-valid-[key]: for each valid key added by $setValidity
+	ng-invalid-[key]: for each invalid key added by $setValidity
+	ng-pristine: the control hasn't been interacted with yet
+	ng-dirty: the control has been interacted with
+	ng-touched: the control has been blurred
+	ng-untouched: the control hasn't been blurred
+	ng-pending: any $asyncValidators are unfulfilled
+
+    -->
+    
+	<div ng-app="formExample" ng-controller="ExampleController">
+		<form novalidate class="css-form">
+			<label>Name: 
+			   <input type="text" ng-model="user.name" name="uName" required=""/>
+			</label><br/>
+			<div ng-show="form.$submitted || form.uName.$touched">
+				<div ng-show="form.uName.$error.required">Tell us your name.</div>
+			</div>
+
+			<label>E-mail: 
+			    <input type="email" ng-model="user.email" required=""/>
+			</label><br>
+			<div ng-show="form.$submitted || form.uEmail.$touched">
+			    <span ng-show="form.uEmail.$error.required">Tell us your email.</span>
+			     <span ng-show="form.uEmail.$error.email">This is not a valid email.</span>
+			</div>
+
+			Gender: <label><input type="radio" ng-model="user.gender" value="male"/>male</label>
+			<label><input type="radio" ng-model="user.gender" value="female"/>female</label><br/>
+			<label>
+   			 <input type="checkbox" ng-model="user.agree" name="userAgree" required="" />
+
+    		I agree:
+   			 </label>
+   			 <input type="text" ng-show="user.agree" ng-model="user.agreeSign" required="" />
+   			 <div ng-show="form.$submitted || form.userAgree.$touched">
+   			 	<div ng-show="!user.agree || !user.agreeSign">Please agree and sign.</div> 
+   			 </div>
+
+
+			<input type="button" ng-click="reset(form)" value="Reset"/>
+			<input type="submit" ng-click="update(user)" value="Save">
+		</form>
+		<pre>user = {{user | json}}</pre>
+		<pre>master = {{master | json}}</pre>
+
+	</div>
+
+
+		<style type="text/css">
+		  .css-form input.ng-invalid.ng-touched {
+		    background-color: #FA787E;
+		  }
+
+		  .css-form input.ng-valid.ng-touched {
+		    background-color: #78FA89;
+		  }
+		</style>
+
+	<script>
+		var myApp=angular.module("formExample",[]);
+		
+		myApp.controller('ExampleController',['$scope', function($scope){
+			$scope.master = {};
+			
+			 $scope.update = function(user) {
+		        $scope.master = angular.copy(user);
+		      };
+
+		      $scope.reset = function(form) {
+		      	if (form) {
+				      form.$setPristine();
+				      form.$setUntouched();
+				    }
+		        $scope.user = angular.copy($scope.master);
+		      };
+
+		      $scope.reset();
+		}]);
+
+	</script>
+</body>
+</html>

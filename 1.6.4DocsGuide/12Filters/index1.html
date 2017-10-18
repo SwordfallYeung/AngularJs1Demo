@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script src="https://code.angularjs.org/1.6.4/angular.min.js"></script>
+</head>
+<body>
+    
+    <!-- 
+    Developer Guide  
+    Forms
+    -->
+
+    <!-- 
+    Using CSS classes
+
+    To allow styling of form as well as controls, ngModel adds these CSS classes:
+    ng-valid: the model is valid
+	ng-invalid: the model is invalid
+	ng-valid-[key]: for each valid key added by $setValidity
+	ng-invalid-[key]: for each invalid key added by $setValidity
+	ng-pristine: the control hasn't been interacted with yet
+	ng-dirty: the control has been interacted with
+	ng-touched: the control has been blurred
+	ng-untouched: the control hasn't been blurred
+	ng-pending: any $asyncValidators are unfulfilled
+
+    -->
+    
+	<div ng-app="myStatefulFilterApp" ng-controller="ExampleController">
+		Input: <input type="text" ng-model="greeting"/><br/>
+		Decoration: <input ng-model="decoration.symbol" type="text"><br/>
+		No filter: {{greeting}}<br/>
+		Decoratec: {{greeting | decorate}}
+
+	</div>
+
+	<script>
+		var myApp=angular.module("myStatefulFilterApp",[]);
+		myApp.filter("decorate",["decoration", function(decoration){
+			
+			function decorateFilter(input){
+				return decoration.symbol + input + decoration.symbol;
+			}
+
+			decorateFilter.$stateful = true;
+
+			return decorateFilter;
+		}]);
+
+		myApp.controller('MyController',['$scope','decoration', function($scope, decoration){
+			$scope.greeting = 'hello';
+			$scope.decoration = decoration;
+		}]);
+
+		myApp.value('decoration',{symbol: '*'});
+	</script>
+</body>
+</html>
