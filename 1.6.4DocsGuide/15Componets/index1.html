@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script src="https://code.angularjs.org/1.6.4/angular.min.js"></script>
+</head>
+<body>
+    
+    <!-- 
+    Components 
+    
+    -->
+
+    <!-- 
+    Component-based application architecture
+
+    -->
+    
+	<div ng-app="heroApp" ng-controller="myCtrl as ctrl">
+		<b>Hero</b><br/>
+		<hero-detail hero1="ctrl.heroClick()"></hero-detail>
+	</div>
+
+	<script>
+		var heroApp=angular.module("heroApp",[]);
+
+		heroApp.controller('myCtrl',function myCtrl($window){
+			this.hero={
+				name:'Spawn'
+			};
+			this.heroClick=function(){
+				return this.hero;
+			}
+		});
+		
+		function HeroDetailController(){
+			
+		}
+
+		heroApp.component('heroDetail',{
+			template:'<span>Name: {{$ctrl.hero1.name}}</span>',
+			controller: HeroDetailController,
+			bindings:{
+				 hero1: '='
+				}
+				/*
+				hero指的是什么
+
+				bindings 可以绑定对象或者函数名，需要与组件元素属性以及组件模板内{{名}}一样(3个一样)，充当调用组件与被调用组件的对象传递。简单来说，就是上层与下层对象传递的媒介，对此需
+				要与上层、下层建立联系，这个是通过名字一致性来实现的。比如上层调用组件"<hero-detail hero1="ctrl.heroClick()"></hero-detail>"
+				中的元素属性hero1，bindings绑定的hero1，被调用组件heroDetail的template中的{{hero1}}
+			    */
+		});
+
+		
+
+	</script>
+</body>
+</html>
