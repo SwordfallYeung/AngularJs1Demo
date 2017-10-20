@@ -16,3 +16,6 @@ http://blog.csdn.net/Rongbo_J/article/details/51325606<br/>
 <br/>
 constant与value的区别：<br/>
 http://www.cnblogs.com/lyy-2016/p/5691499.html<br/>
+<br/>
+AngularJs Component符号表示:
+http://blog.csdn.net/lastsweetop/article/details/56285838?locationNum=2&fps=1<br/>
