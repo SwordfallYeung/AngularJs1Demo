@@ -19,3 +19,7 @@ http://www.cnblogs.com/lyy-2016/p/5691499.html<br/>
 <br/>
 AngularJs Component符号表示:
 http://blog.csdn.net/lastsweetop/article/details/56285838?locationNum=2&fps=1<br/>
+<br/>
+AngularJs 模块详解(包括$controllerProvider,$compileProvider,$filterProvider,$provide等):<br/>
+http://blog.csdn.net/woxueliuyun/article/details/50962645<br/>
+http://blog.csdn.net/onil_chen/article/details/51088503<br/>
