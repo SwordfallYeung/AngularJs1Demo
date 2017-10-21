@@ -25,3 +25,6 @@ http://blog.csdn.net/woxueliuyun/article/details/50962645<br/>
 Controller按需加载:<br/>
 http://blog.csdn.net/onil_chen/article/details/51088503<br/>
 详细http://beginor.github.io/2014/12/20/angularjs-controller-load-on-demand.html<br/>
+<br/>
+angularjs中的路由介绍详解 ui-route($stateProvider,$urlRouteProvider):<br/>
+http://www.cnblogs.com/littlemonk/p/5500801.html<br/>
