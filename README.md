@@ -30,3 +30,5 @@ angularjs中的路由介绍详解 ui-route($stateProvider,$urlRouteProvider):<br
 http://www.cnblogs.com/littlemonk/p/5500801.html<br/>
 AngularUI Router路由与AngularJS的标准路由ngRoute的区别:<br/>
 http://rensanning.iteye.com/blog/2149056<br/>
+$watch监听模型:<br/>
+http://yuankeqiang.lofter.com/post/8de51_1454f93<br/>
