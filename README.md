@@ -24,3 +24,4 @@ AngularJs 模块详解(包括$controllerProvider,$compileProvider,$filterProvide
 http://blog.csdn.net/woxueliuyun/article/details/50962645<br/>
 Controller按需加载:<br/>
 http://blog.csdn.net/onil_chen/article/details/51088503<br/>
+详细http://beginor.github.io/2014/12/20/angularjs-controller-load-on-demand.html<br/>
