@@ -22,4 +22,5 @@ http://blog.csdn.net/lastsweetop/article/details/56285838?locationNum=2&fps=1<br
 <br/>
 AngularJs 模块详解(包括$controllerProvider,$compileProvider,$filterProvider,$provide等):<br/>
 http://blog.csdn.net/woxueliuyun/article/details/50962645<br/>
+Controller按需加载:<br/>
 http://blog.csdn.net/onil_chen/article/details/51088503<br/>
