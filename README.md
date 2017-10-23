@@ -35,3 +35,6 @@ http://blog.csdn.net/bem_zj/article/details/72615171<br/>
 <br/>
 $watch监听模型:<br/>
 http://yuankeqiang.lofter.com/post/8de51_1454f93<br/>
+<br/>
+Javascript 严格模式'use strict'详解:<br/>
+http://www.cnblogs.com/jiqing9006/p/5091491.html<br/>
