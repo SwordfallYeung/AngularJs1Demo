@@ -38,3 +38,8 @@ http://yuankeqiang.lofter.com/post/8de51_1454f93<br/>
 <br/>
 Javascript 严格模式'use strict'详解:<br/>
 http://www.cnblogs.com/jiqing9006/p/5091491.html<br/>
+<br/>
+codemirror:<br/>
+http://www.cnblogs.com/luozhihao/p/4633219.html<br/>
+ui-codemirror:<br/>
+https://github.com/angular-ui/ui-codemirror/tree/master<br/>
