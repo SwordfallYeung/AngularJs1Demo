@@ -39,7 +39,10 @@ http://yuankeqiang.lofter.com/post/8de51_1454f93<br/>
 Javascript 严格模式'use strict'详解:<br/>
 http://www.cnblogs.com/jiqing9006/p/5091491.html<br/>
 <br/>
-codemirror:<br/>
+codemirror官网:<br/>
+http://codemirror.net/<br/>
+codemirror中文用法说明:<br/>
+https://zhuanlan.zhihu.com/p/22163474<br/>
 http://www.cnblogs.com/luozhihao/p/4633219.html<br/>
 ui-codemirror:<br/>
 https://github.com/angular-ui/ui-codemirror/tree/master<br/>
