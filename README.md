@@ -46,3 +46,6 @@ https://zhuanlan.zhihu.com/p/22163474<br/>
 http://www.cnblogs.com/luozhihao/p/4633219.html<br/>
 ui-codemirror:<br/>
 https://github.com/angular-ui/ui-codemirror/tree/master<br/>
+<br/>
+AngularJs directive详细介绍(注意template的应用string或template函数):<br/>
+http://www.jb51.net/article/109974.htm<br/>
