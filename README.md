@@ -49,3 +49,6 @@ https://github.com/angular-ui/ui-codemirror/tree/master<br/>
 <br/>
 AngularJs directive详细介绍(注意template的应用string或template函数):<br/>
 http://www.jb51.net/article/109974.htm<br/>
+<br/>
+Angular $http returns $$state object:<br/>
+http://www.jianshu.com/p/4de3d6f19f55<br/>
